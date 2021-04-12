@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-4">Filo Examen: <em>Het goede leven en de vrije markt</em></h1>
+    <p class="lead">Door <b>leerlingen</b>, voor <b>leerlingen.</b></p>
+    <hr class="my-4">
+    <p>Een site waarop <em>samenvattingen</em>, <em>eindtermen</em>, <em>begrippen</em> en <em>filosofen</em> worden uitgewerkt.</p>
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </div>
+</div>
+
+<div class="container">
+  <div class="form-group has-search">
+    <span class="fa fa-search form-control-feedback"></span>
+    <input type="text" class="form-control" placeholder="Zoek hier alles wat filosofisch is">
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
+      <div class="card" style="width:90%; margin:auto; margin-top:20px; margin-bottom:20px;">
+        <img src=<%=asset_path("begrippen.png")%>  class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Begrippen</h5>
+          <p class="card-text">Een beschrijving van de begrippen met directe link naar de samenvattingen.</p>
+          <%= link_to 'Knop!', end_terms_path, class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
+      <div class="card" style="width:90%; margin:auto; margin-top:20px; margin-bottom:20px;">
+        <img src=<%=asset_path("filosoof.png")%>  class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Samenvattingen</h5>
+          <p class="card-text">De plek om overzichtelijk alle samenvattingen voor het Filosofie examen te lezen.</p>
+          <%= link_to 'Knop!', end_terms_path, class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6" style="margin-left:auto; margin-right:auto;">
+      <div class="card" style="width:90%; margin:auto; margin-top:20px; margin-bottom:20px;">
+        <img src=<%=asset_path("samenvatting.png")%>  class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Filosofen</h5>
+          <p class="card-text">Lees hier per filosoof uitgebreid alle informatie die nodig is om te weten voor het examen.</p>
+          <%= link_to 'Knop!', end_terms_path, class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
