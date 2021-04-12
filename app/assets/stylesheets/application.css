@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+.custom-nav{
+    background-color: white;
+}
+.ais-SearchBox { margin: 1em 0; }
