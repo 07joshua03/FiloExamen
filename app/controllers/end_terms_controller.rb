@@ -7,6 +7,7 @@ class EndTermsController < ApplicationController
   end
 
   def test
+    render layout: false
   end
 
   # GET /end_terms/1 or /end_terms/1.json
@@ -28,7 +29,7 @@ class EndTermsController < ApplicationController
 
     respond_to do |format|
       if @end_term.save
-        format.html { redirect_to @end_term, notice: "End term was successfully created." }
+        format.html { redirect_to end_terms_path, notice: "End term was successfully created." }
         format.json { render :show, status: :created, location: @end_term }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -41,7 +42,7 @@ class EndTermsController < ApplicationController
   def update
     respond_to do |format|
       if @end_term.update(end_term_params)
-        format.html { redirect_to @end_term, notice: "End term was successfully updated." }
+        format.html { redirect_to end_terms_path, notice: "End term was successfully updated." }
         format.json { render :show, status: :ok, location: @end_term }
       else
         format.html { render :edit, status: :unprocessable_entity }

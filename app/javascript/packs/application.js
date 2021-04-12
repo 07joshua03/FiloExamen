@@ -11,25 +11,3 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-
-const searchClient = algoliasearch('B1G2GM9NG0', 'aadef574be1f9252bb48d4ea09b5cfe5');
-
-const search = instantsearch({
-    indexName: 'demo_ecommerce ',
-    searchClient,
-});
-
-search.addWidgets([
-    instantsearch.widgets.searchBox({
-        container: '#searchbox',
-    }),
-    instantsearch.widgets.hits({
-        container: '#hits',
-    }),
-    instantsearch.widgets.pagination({
-        container: '#pagination',
-    }),
-]);
-
-search.start();
-

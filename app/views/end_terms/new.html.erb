@@ -1,5 +1,7 @@
-<h1>New End Term</h1>
+<div class="container">
+  <h1>Creëer nieuwe eindterm</h1>
+  <%= render 'form', end_term: @end_term %>
+  <%= link_to 'Back', end_terms_path %>
 
-<%= render 'form', end_term: @end_term %>
+</div>
 
-<%= link_to 'Back', end_terms_path %>
