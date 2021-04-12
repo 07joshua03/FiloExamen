@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @end_term.number %>
+</p>
+
+<p>
+  <strong>Chapter:</strong>
+  <%= @end_term.chapter %>
+</p>
+
+<p>
+  <strong>Definition:</strong>
+  <%= @end_term.definition %>
+</p>
+
+<%= link_to 'Edit', edit_end_term_path(@end_term) %> |
+<%= link_to 'Back', end_terms_path %>
