@@ -2,7 +2,6 @@
   #fuck{
       height: 500px !important;
   }
-
 </style>
 
 <%= form_with(model: end_term) do |form| %>
@@ -29,15 +28,12 @@
   </div>
 
   <div class="field form-group">
-
-
     <div class="input-group" >
       <div class="input-group-prepend">
         <span class="input-group-text"><%= form.label :definition %></span>
       </div>
       <%= form.text_area :definition, class:"form-control", id:"fuck" %>
     </div>
-
   </div>
 
   <div class="actions form-group">

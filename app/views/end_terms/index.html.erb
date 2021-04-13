@@ -8,19 +8,35 @@
   <% prev_chapter = 0 %>
   <% @end_terms.each do |end_term| %>
     <% if end_term.chapter != prev_chapter %>
-      <h3>Hoofdstuk <%= end_term.chapter %></h3>
+      <a id="chapter_<%=end_term.chapter%>"><h3>Hoofdstuk <%= end_term.chapter %></h3></a>
       <hr>
     <% end %>
     <% prev_chapter = end_term.chapter %>
 
       <div class="row">
-        <div class="col-6"><h2 display="inline">Eindterm <%= end_term.number %></h2></div>
+        <div class="col-6"><a id="eindterm_<%=end_term.number%>"><h2 display="inline">Eindterm <%= end_term.number %></h2></a></div>
         <div class="col-6"><p class="float-right"><%= link_to 'Edit', edit_end_term_path(end_term) %> <%= link_to 'Destroy', end_term, method: :delete, data: { confirm: 'Are you sure?' } %></p></div>
       </div>
 
       <% markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML.new(render_options = {}), autolink: true, tables: true)%>
       <%= markdown.render(end_term.definition).html_safe %>
+      <% if end_term.terms.exists? %>
+        <p>
+          <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse<%=end_term.number%>" aria-expanded="false" aria-controls="collapse<%=end_term.number%>">
+            Begrippen
+          </button>
+        </p>
+        <div class="collapse" id="collapse<%=end_term.number%>">
+          <div class="card card-body">
+            <% end_term.terms.each do |term| %>
+              <p><b><%= term.name %></b>: <%= term.definition %></p>
+            <% end %>
+          </div>
+        </div>
+
+      <% end %>
     <hr>
+
   <% end %>
 </div>
 

@@ -1,0 +1,32 @@
+<style>
+  #fuck2{
+      margin-bottom: 0px !important;
+  }
+</style>
+
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-6"> <h1>Begrippen</h1></div>
+    <div class="col-6"><p class="float-right"><%= link_to 'Creëer nieuw begrip', new_term_path %></p></div>
+  </div>
+  <hr>
+  <% prev_et = 0 %>
+  <% @terms.each do |term| %>
+    <% if term.end_term.number != prev_et %>
+      <div class="row">
+        <div class="col-6"><h3>Eindterm <%= term.end_term.number %></h3></div>
+          <div class="col-6"><a class="float-right" href="<%=end_terms_path%>#eindterm_<%=term.end_term.number%>">Ga naar eindterm</a></div>
+      </div>
+      <hr>
+    <% end %>
+    <% prev_et = term.end_term %>
+
+    <h4 id="fuck2"><%= term.name %></h4>
+    <small><%= link_to 'Edit', edit_term_path(term) %> <%= link_to 'Destroy', term, method: :delete, data: { confirm: 'Are you sure?' } %></small>
+    <br><br>
+    <% markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML.new(render_options = {}), autolink: true, tables: true)%>
+    <%= markdown.render(term.definition).html_safe %>
+    <hr>
+  <% end %>
+</div>

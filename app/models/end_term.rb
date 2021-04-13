@@ -1,6 +1,7 @@
 class EndTerm < ApplicationRecord
   default_scope {order(number: :asc)}
 
+  has_many :terms, :foreign_key => 'end_term', :primary_key => 'number'
   include AlgoliaSearch
 
   algoliasearch per_environment: true do

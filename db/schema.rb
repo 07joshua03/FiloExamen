@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_12_152149) do
+ActiveRecord::Schema.define(version: 2021_04_13_200533) do
 
   create_table "end_terms", force: :cascade do |t|
     t.integer "number"
@@ -19,6 +19,15 @@ ActiveRecord::Schema.define(version: 2021_04_12_152149) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["number"], name: "index_end_terms_on_number", unique: true
+  end
+
+  create_table "terms", force: :cascade do |t|
+    t.string "name"
+    t.integer "end_term"
+    t.text "other_et"
+    t.text "definition"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
