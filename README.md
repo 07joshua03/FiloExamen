@@ -1,4 +1,5 @@
 # Filosofie Examen 2021 Site: Het goede leven en de vrije markt
+[![Ruby](https://github.com/07joshua03/FiloExamen/actions/workflows/ruby.yml/badge.svg)](https://github.com/07joshua03/FiloExamen/actions/workflows/ruby.yml)
 ![img.png](img.png)
 A site where summaries, endterms, definitions and philosophers are written out for the dutch philosophy exam 2021/2022.
 
