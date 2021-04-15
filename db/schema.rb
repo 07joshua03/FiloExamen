@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_13_200533) do
+ActiveRecord::Schema.define(version: 2021_04_15_215953) do
 
   create_table "end_terms", force: :cascade do |t|
     t.integer "number"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2021_04_13_200533) do
 
   create_table "terms", force: :cascade do |t|
     t.string "name"
-    t.integer "end_term"
+    t.integer "main_et"
     t.text "other_et"
     t.text "definition"
     t.datetime "created_at", precision: 6, null: false
